@@ -47,24 +47,24 @@ export default function StatusBar() {
   };
 
   return (
-    <div className="fixed top-0 w-full z-50 bg-gray-900/95 backdrop-blur-sm border-b border-cyan-800">
-      <div className="max-w-7xl mx-auto px-4 h-12 flex items-center justify-between text-xs">
-        <div className="flex items-center space-x-6">
-          <span className="text-cyan-400">HELLO_</span>
-          <div className="flex items-center space-x-2">
-            <Activity className="w-3 h-3 text-green-400" />
-            <span>SYSTEM_ONLINE</span>
+    <div className="fixed top-0 w-full z-50 bg-gray-900/95 backdrop-blur-sm border-b-2 border-cyan-800">
+      <div className="max-w-[95vw] mx-auto px-6 h-16 flex items-center justify-between text-sm">
+        <div className="flex items-center space-x-8">
+          <span className="text-cyan-400 font-semibold text-lg">HELLO_</span>
+          <div className="flex items-center space-x-3">
+            <Activity className="w-4 h-4 text-green-400" />
+            <span className="font-semibold">SYSTEM_ONLINE</span>
           </div>
         </div>
         
-        <div className="flex items-center space-x-6">
-          <span>TIME: {mounted && currentTime ? currentTime.toLocaleTimeString() : '--:--:--'}</span>
-          <div className="flex space-x-4">
+        <div className="flex items-center space-x-8">
+          <span className="font-semibold">TIME: {mounted && currentTime ? currentTime.toLocaleTimeString() : '--:--:--'}</span>
+          <div className="flex space-x-6">
             {['HOME', 'ABOUT', 'PORTFOLIO', 'CONTACT'].map((section) => (
               <button
                 key={section}
                 onClick={() => scrollToSection(section.toLowerCase() === 'portfolio' ? 'projects' : section.toLowerCase())}
-                className={`px-3 py-1 border border-cyan-800 hover:border-cyan-400 hover:bg-cyan-400/10 transition-all duration-200 ${
+                className={`px-4 py-2 border-2 border-cyan-800 hover:border-cyan-400 hover:bg-cyan-400/10 transition-all duration-200 font-semibold ${
                   activeSection === (section.toLowerCase() === 'portfolio' ? 'projects' : section.toLowerCase()) 
                     ? 'border-cyan-400 bg-cyan-400/20' 
                     : ''

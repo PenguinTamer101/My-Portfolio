@@ -31,8 +31,8 @@ export default function HeroSection() {
         {/* Main Content - Full Width */}
         <div className="text-center mb-16">
           <div className="space-y-6">
-            <div className="text-cyan-400 text-sm">INITIALIZING SYSTEM...</div>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold">
+            <div className="text-cyan-400 text-md">{"// INITIALIZING SYSTEM..."}</div>
+            <h1 className="text-5xl md:text-7xl lg:text-7.5xl font-bold">
               <span className="text-cyan-400">{typingText}</span>
               <span className="animate-pulse">|</span>
             </h1>
@@ -72,15 +72,15 @@ export default function HeroSection() {
         </div>
 
         {/* Terminal Profile Cards - Side by Side */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
           {/* Profile Card */}
           <div className="border border-cyan-800 bg-gray-800/50 p-6">
             <div className="flex items-center justify-between mb-4 pb-2 border-b border-cyan-800">
-              <span className="text-cyan-400 text-sm">OPERATOR_PROFILE</span>
-              <div className="flex space-x-1">
-                <div className="w-2 h-2 bg-red-400 rounded-full"></div>
-                <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+              <span className="text-cyan-400 text-base">OPERATOR_PROFILE</span>
+              <div className="flex space-x-1.5">
+                <div className="w-2.5 h-2.5 bg-red-400 rounded-full"></div>
+                <div className="w-2.5 h-2.5 bg-yellow-400 rounded-full"></div>
+                <div className="w-2.5 h-2.5 bg-green-400 rounded-full"></div>
               </div>
             </div>
             
@@ -90,27 +90,27 @@ export default function HeroSection() {
                   <User className="w-8 h-8 text-cyan-400" />
                 </div>
                 <div>
-                  <div className="text-cyan-300 font-semibold">LT. HAJIAN, SALMA</div>
-                  <div className="text-xs text-gray-400">SOFTWARE ENGINEER</div>
-                  <div className="text-xs text-gray-400">ID: CS_2025</div>
+                  <div className="text-cyan-300 font-semibold text-lg">LT. HAJIAN, SALMA</div>
+                  <div className="text-sm text-gray-400">SOFTWARE ENGINEER</div>
+                  <div className="text-sm text-gray-400">ID: CS_2025</div>
                 </div>
               </div>
               
-              <div className="grid grid-cols-2 gap-4 text-xs">
+              <div className="grid grid-cols-2 gap-4 text-sm">
                 <div>
-                  <div className="text-cyan-400">LOCATION:</div>
-                  <div className="text-gray-300">Berkeley, CA</div>
+                  <div className="text-cyan-400 text-base">LOCATION:</div>
+                  <div className="text-gray-300">Seattle, WA</div>
                 </div>
                 <div>
-                  <div className="text-cyan-400">STATUS:</div>
+                  <div className="text-cyan-400 text-base">STATUS:</div>
                   <div className="text-green-400">SEEKING_OPPORTUNITIES</div>
                 </div>
                 <div>
-                  <div className="text-cyan-400">GRADUATION:</div>
-                  <div className="text-gray-300">MAY 2025</div>
+                  <div className="text-cyan-400 text-base">GRADUATION:</div>
+                  <div className="text-gray-300">JUNE 2025</div>
                 </div>
                 <div>
-                  <div className="text-cyan-400">CLEARANCE:</div>
+                  <div className="text-cyan-400 text-base">CLEARANCE:</div>
                   <div className="text-yellow-400">STUDENT</div>
                 </div>
               </div>
@@ -120,34 +120,34 @@ export default function HeroSection() {
           {/* Quick Stats */}
           <div className="border border-cyan-800 bg-gray-800/50 p-6">
             <div className="flex items-center justify-between mb-4 pb-2 border-b border-cyan-800">
-              <span className="text-cyan-400 text-sm">SYSTEM_METRICS</span>
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+              <span className="text-cyan-400 text-base">SYSTEM_METRICS</span>
+              <div className="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse"></div>
             </div>
             
             <div className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center p-4 border border-gray-700">
                   <div className="text-2xl font-bold text-cyan-400">3.8</div>
-                  <div className="text-xs text-gray-400">GPA</div>
+                  <div className="text-sm text-gray-400">GPA</div>
                 </div>
                 <div className="text-center p-4 border border-gray-700">
-                  <div className="text-2xl font-bold text-green-400">15+</div>
-                  <div className="text-xs text-gray-400">PROJECTS</div>
+                  <div className="text-2xl font-bold text-green-400">10+</div>
+                  <div className="text-sm text-gray-400">PROJECTS</div>
                 </div>
                 <div className="text-center p-4 border border-gray-700">
                   <div className="text-2xl font-bold text-yellow-400">2</div>
-                  <div className="text-xs text-gray-400">INTERNSHIPS</div>
+                  <div className="text-sm text-gray-400">INTERNSHIPS</div>
                 </div>
                 <div className="text-center p-4 border border-gray-700">
                   <div className="text-2xl font-bold text-purple-400">10K+</div>
-                  <div className="text-xs text-gray-400">LINES_CODE</div>
+                  <div className="text-sm text-gray-400">LINES_CODE</div>
                 </div>
               </div>
               
-              <div className="pt-2 border-t border-gray-700">
-                <div className="text-cyan-400 text-xs mb-2">CURRENT_FOCUS:</div>
+              <div className="pt-3 border-t border-gray-700">
+                <div className="text-cyan-400 text-base mb-2">CURRENT_FOCUS:</div>
                 <div className="text-gray-300 text-sm">
-                  Distributed Systems • Machine Learning • Full-Stack Development
+                  Machine Learning • Distributed Systems • Full-Stack Development
                 </div>
               </div>
             </div>
