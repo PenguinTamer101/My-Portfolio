@@ -31,7 +31,7 @@ export default function HeroSection() {
         {/* Main Content - Full Width */}
         <div className="text-center mb-16">
           <div className="space-y-6">
-            <div className="text-cyan-400 text-sm">// INITIALIZING SYSTEM...</div>
+            <div className="text-cyan-400 text-sm">INITIALIZING SYSTEM...</div>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold">
               <span className="text-cyan-400">{typingText}</span>
               <span className="animate-pulse">|</span>

@@ -42,7 +42,7 @@ export default function AboutSection() {
     <section id="about" className="py-20 bg-gray-800/30">
       <div className="max-w-6xl mx-auto px-4">
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-cyan-400 mb-2">// EXPERIENCE_LOG</h2>
+          <h2 className="text-3xl font-bold text-cyan-400 mb-2">EXPERIENCE_LOG</h2>
           <div className="text-gray-400">Professional experience and technical capabilities</div>
         </div>
         

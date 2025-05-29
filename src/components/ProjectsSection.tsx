@@ -88,7 +88,7 @@ export default function ProjectsSection() {
     <section id="projects" className="py-20">
       <div className="max-w-6xl mx-auto px-4">
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-cyan-400 mb-2">// ACTIVE_DEPLOYMENTS</h2>
+          <h2 className="text-3xl font-bold text-cyan-400 mb-2">ACTIVE_DEPLOYMENTS</h2>
           <div className="text-gray-400">Current operational systems and projects</div>
         </div>
         
