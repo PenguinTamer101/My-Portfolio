@@ -56,7 +56,7 @@ export default function AboutSection() {
         
         {/* Experience Cards */}
         <div className="space-y-4 md:space-y-6 mb-8 md:mb-12">
-          {experiences.map((exp, index) => (
+          {experiences.map((exp) => (
             <div key={`${exp.company}_${exp.period}`} className="border border-cyan-800 bg-gray-800/50 p-4 md:p-6 hover:border-cyan-400 transition-all duration-300">
               {exp.missions ? (
                 // Microsoft Card with nested missions

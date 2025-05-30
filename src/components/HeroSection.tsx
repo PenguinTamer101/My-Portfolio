@@ -103,7 +103,7 @@ export default function HeroSection() {
                     <User className="w-7 h-7 text-cyan-400" />
                   </div>
                   <div>
-                    <div className="text-cyan-300 font-semibold text-base">LT. HAJIAN, SALMA</div>
+                    <div className="text-cyan-300 font-semibold text-base">HAJIAN, SALMA</div>
                     <div className="text-xs text-gray-400">SOFTWARE ENGINEER</div>
                     <div className="text-xs text-gray-400">ID: CS_2025</div>
                   </div>
