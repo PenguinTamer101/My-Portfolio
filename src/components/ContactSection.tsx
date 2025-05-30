@@ -1,7 +1,42 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import { Mail, Linkedin, Github, Terminal, Activity, ChevronRight } from 'lucide-react';
 
 export default function ContactSection() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('sending');
+    
+    try {
+      // Here you would typically send the form data to your backend
+      // For now, we'll simulate a successful submission
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      setStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+      
+      // Reset status after 3 seconds
+      setTimeout(() => setStatus('idle'), 3000);
+    } catch (error) {
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 3000);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+
   return (
     <section id="contact" className="py-8 md:py-12 bg-gray-800/30">
       <div className="max-w-6xl mx-auto px-4">
@@ -21,6 +56,8 @@ export default function ContactSection() {
               <div className="space-y-3">
                 <a
                   href="mailto:salmahajian@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center justify-between p-3 border border-gray-700 hover:border-cyan-400 hover:bg-cyan-400/10 transition-all duration-200 group"
                 >
                   <div className="flex items-center space-x-3">
@@ -35,6 +72,8 @@ export default function ContactSection() {
                 
                 <a
                   href="https://linkedin.com/in/salma-hajian"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center justify-between p-3 border border-gray-700 hover:border-cyan-400 hover:bg-cyan-400/10 transition-all duration-200 group"
                 >
                   <div className="flex items-center space-x-3">
@@ -49,6 +88,8 @@ export default function ContactSection() {
                 
                 <a
                   href="https://github.com/PenguinTamer101"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center justify-between p-3 border border-gray-700 hover:border-cyan-400 hover:bg-cyan-400/10 transition-all duration-200 group"
                 >
                   <div className="flex items-center space-x-3">
@@ -70,13 +111,17 @@ export default function ContactSection() {
               <Terminal className="w-4 h-4 text-cyan-400" />
             </div>
             
-            <div className="space-y-3">
+            <form onSubmit={handleSubmit} className="space-y-3">
               <div>
                 <div className="text-cyan-400 text-sm mb-1.5">SENDER_ID:</div>
                 <input
                   type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   className="w-full bg-gray-700 border border-gray-600 focus:border-cyan-400 focus:bg-gray-600 text-cyan-100 px-3 py-2 text-sm transition-all duration-200"
                   placeholder="Enter your name..."
+                  required
                 />
               </div>
               
@@ -84,24 +129,51 @@ export default function ContactSection() {
                 <div className="text-cyan-400 text-sm mb-1.5">EMAIL_ADDRESS:</div>
                 <input
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   className="w-full bg-gray-700 border border-gray-600 focus:border-cyan-400 focus:bg-gray-600 text-cyan-100 px-3 py-2 text-sm transition-all duration-200"
                   placeholder="your.email@domain.com"
+                  required
                 />
               </div>
               
               <div>
                 <div className="text-cyan-400 text-sm mb-1.5">MESSAGE_CONTENT:</div>
                 <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   rows={4}
                   className="w-full bg-gray-700 border border-gray-600 focus:border-cyan-400 focus:bg-gray-600 text-cyan-100 px-3 py-2 text-sm transition-all duration-200 resize-none"
-                  placeholder="What's going on, friend..."
+                  placeholder="Awaiting your transmission..."
+                  required
                 ></textarea>
               </div>
               
-              <button className="w-full bg-cyan-500 hover:bg-cyan-400 text-gray-900 py-2.5 px-4 font-semibold text-sm transition-colors duration-200">
-                TRANSMIT_MESSAGE
+              <button 
+                type="submit"
+                disabled={status === 'sending'}
+                className={`w-full py-2.5 px-4 font-semibold text-sm transition-colors duration-200 ${
+                  status === 'sending' 
+                    ? 'bg-gray-600 text-gray-400 cursor-not-allowed'
+                    : status === 'success'
+                    ? 'bg-green-500 text-gray-900'
+                    : status === 'error'
+                    ? 'bg-red-500 text-gray-900'
+                    : 'bg-cyan-500 hover:bg-cyan-400 text-gray-900'
+                }`}
+              >
+                {status === 'sending' 
+                  ? 'ESTABLISHING_CONNECTION...'
+                  : status === 'success'
+                  ? 'TRANSMISSION_SUCCESSFUL'
+                  : status === 'error'
+                  ? 'TRANSMISSION_FAILED'
+                  : 'INITIATE_TRANSMISSION'
+                }
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </div>
