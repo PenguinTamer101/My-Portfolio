@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Mail, Terminal, Download, User, Activity, Code, Server, Brain, Cpu } from 'lucide-react';
+import { Github, Linkedin, Mail, Terminal, Download, User, Activity, Brain, Cpu } from 'lucide-react';
 
 export default function HeroSection() {
   const [typingText, setTypingText] = useState('');
@@ -45,8 +45,13 @@ export default function HeroSection() {
                 <div className="text-xl md:text-2xl text-cyan-300 font-semibold">SOFTWARE_ENGINEER</div>
               </div>
               
-              <div className="text-base text-gray-400 max-w-lg">
-                Computer Science @ University of Washington • Building next-generation software solutions with modern technologies
+              <div className="space-y-3">
+                <div className="flex items-center space-x-2 text-yellow-400 font-semibold">
+                  <span className="text-base md:text-lg">COMPUTER_SCIENCE @ UNIVERSITY_OF_WASHINGTON</span>
+                </div>
+                <div className="text-base text-gray-400 max-w-lg">
+                  Building next-generation software solutions with modern technologies
+                </div>
               </div>
             </div>
             

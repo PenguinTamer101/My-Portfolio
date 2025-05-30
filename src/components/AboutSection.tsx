@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, Briefcase, Award, Zap, ChevronRight, Book, Glasses, Terminal } from 'lucide-react';
+import { Zap, ChevronRight, Book, Glasses, Terminal } from 'lucide-react';
 
 export default function AboutSection() {
   const experiences = [

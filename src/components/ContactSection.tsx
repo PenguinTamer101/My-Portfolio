@@ -24,7 +24,7 @@ export default function ContactSection() {
       
       // Reset status after 3 seconds
       setTimeout(() => setStatus('idle'), 3000);
-    } catch (error) {
+    } catch {
       setStatus('error');
       setTimeout(() => setStatus('idle'), 3000);
     }
