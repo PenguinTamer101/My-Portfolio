@@ -19,7 +19,7 @@ const StatusIndicator = ({ status }: { status: Project['status'] }) => {
   };
   
   return (
-    <div className="flex items-center space-x-2">
+    <div className="flex items-center space-x-1.5">
       <div className={`w-2 h-2 rounded-full ${colors[status]} animate-pulse`}></div>
       <span className="text-xs text-cyan-400 font-mono">{status}</span>
     </div>
@@ -58,34 +58,34 @@ export default function ProjectsSection() {
   ];
 
   return (
-    <section id="projects" className="py-20">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="mb-12">
-          <h2 className="text-4xl font-bold text-cyan-400 mb-2">{"// ACTIVE_DEPLOYMENTS"}</h2>
-          <div className="text-gray-400 text-lg">Past and current systems and projects</div>
+    <section id="projects" className="py-8 md:py-12">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="mb-6 md:mb-8">
+          <h2 className="text-xl md:text-2xl font-bold text-cyan-400 mb-1">{"// ACTIVE_DEPLOYMENTS"}</h2>
+          <div className="text-gray-400 text-sm md:text-base">Past and current systems and projects</div>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {projects.map((project, index) => (
             <div key={project.title} className="border border-cyan-800 bg-gray-800/50 hover:border-cyan-400 transition-all duration-300 group">
-              <div className="p-8">
-                <div className="flex items-center justify-between mb-6 pb-2 border-b border-cyan-800">
+              <div className="p-4 md:p-6">
+                <div className="flex items-center justify-between mb-3 pb-2 border-b border-cyan-800">
                   <StatusIndicator status={project.status} />
-                  <div className="text-sm text-gray-400">#{String(index + 1).padStart(3, '0')}</div>
+                  <div className="text-xs text-gray-400">#{String(index + 1).padStart(3, '0')}</div>
                 </div>
                 
-                <div className="space-y-6">
+                <div className="space-y-4">
                   <div>
-                    <h3 className="text-cyan-300 font-semibold text-lg mb-3">{project.title}</h3>
-                    <p className="text-gray-400 text-base leading-relaxed">{project.description}</p>
+                    <h3 className="text-cyan-300 font-semibold text-sm md:text-base mb-2">{project.title}</h3>
+                    <p className="text-gray-400 text-xs md:text-sm leading-relaxed">{project.description}</p>
                   </div>
                   
-                  <div className="space-y-4">
+                  <div className="space-y-3">
                     <div>
-                      <div className="text-cyan-400 text-base mb-2">TECH_STACK:</div>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="text-cyan-400 text-sm mb-1.5">TECH_STACK:</div>
+                      <div className="flex flex-wrap gap-1.5">
                         {project.tech.map((tech) => (
-                          <span key={tech} className="px-3 py-1.5 bg-gray-700 text-cyan-300 text-sm border border-gray-600">
+                          <span key={tech} className="px-2 py-1 bg-gray-700 text-cyan-300 text-xs border border-gray-600">
                             {tech}
                           </span>
                         ))}
@@ -93,11 +93,11 @@ export default function ProjectsSection() {
                     </div>
                     
                     <div>
-                      <div className="text-cyan-400 text-base mb-3">METRICS:</div>
-                      <div className="grid grid-cols-3 gap-3 text-sm">
+                      <div className="text-cyan-400 text-sm mb-2">METRICS:</div>
+                      <div className="grid grid-cols-3 gap-2 text-xs">
                         {Object.entries(project.metrics).map(([key, value]) => (
                           <div key={key} className="text-center">
-                            <div className="text-green-400 font-mono text-base">{value}</div>
+                            <div className="text-green-400 font-mono text-sm">{value}</div>
                             <div className="text-gray-500 uppercase">{key}</div>
                           </div>
                         ))}
@@ -105,19 +105,19 @@ export default function ProjectsSection() {
                     </div>
                   </div>
                   
-                  <div className="flex space-x-6 pt-3">
+                  <div className="flex space-x-4 pt-2">
                     <a
                       href={project.github}
-                      className="flex items-center text-sm text-cyan-400 hover:text-cyan-300 transition-colors"
+                      className="flex items-center text-xs text-cyan-400 hover:text-cyan-300 transition-colors"
                     >
-                      <Github className="w-4 h-4 mr-2" />
+                      <Github className="w-3.5 h-3.5 mr-1.5" />
                       SOURCE
                     </a>
                     <a
                       href={project.live}
-                      className="flex items-center text-sm text-cyan-400 hover:text-cyan-300 transition-colors"
+                      className="flex items-center text-xs text-cyan-400 hover:text-cyan-300 transition-colors"
                     >
-                      <ExternalLink className="w-4 h-4 mr-2" />
+                      <ExternalLink className="w-3.5 h-3.5 mr-1.5" />
                       DEPLOY
                     </a>
                   </div>
